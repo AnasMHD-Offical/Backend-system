@@ -6,8 +6,8 @@ const { signupValidation, loginValidation } = require("../Middlewares/authValida
 router.post("/login", loginValidation, login)
 router.post("/signup", upload, signup)
 router.post("/logout", logout)
-router.put("/edit", editUser)
-router.get("/user", getUser)
+router.patch("/edit",upload, editUser)
+router.get("/user/:id", getUser)
 router.get("/home"),
 
     module.exports = router
