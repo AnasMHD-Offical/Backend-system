@@ -1,7 +1,7 @@
 const router = require("express").Router()
 const { upload } = require("../utils/multer")
 const { login, signup, logout, editUser, getUser } = require("../Controller/UserController")
-const { signupValidation, loginValidation } = require("../Middlewares/authValidation")
+const {loginValidation } = require("../Middlewares/authValidation")
 
 router.post("/login", loginValidation, login)
 router.post("/signup", upload, signup)

@@ -1,7 +1,7 @@
 const router = require("express").Router()
 const { login, signup, logout, getUsers, addUser , editUser , deleteUser} = require("../Controller/AdminController")
 const usercontroller = require("../Controller/UserController")
-const { loginValidation, signupValidation } = require("../Middlewares/authValidation")
+const { loginValidation } = require("../Middlewares/authValidation")
 const { upload } = require("../utils/multer")
 
 router.post("/login", loginValidation, login)

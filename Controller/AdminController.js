@@ -101,7 +101,7 @@ const addUser = async (req,res)=>{
         await newUser.save()
         console.log(newUser);
 
-        res.status(201).json({ message: "Signup successfully", success: true, newUser })
+        res.status(201).json({ message: "User added successfully", success: true, newUser })
 
     } catch (error) {
         res.status(500).json({ message: "Something went wrong (Internal server error 500)", success: false })
