@@ -174,11 +174,30 @@ const editUser = async (req,res)=>{
 
     }
 }
+
+const deleteUser = async(req,res)=>{
+    try {
+        const id = req.params.id
+        console.log(id);
+        
+        const response = await UserModel.deleteOne({ _id: id });
+        
+        if (!response) {
+           return res.status(404).json({ message: "User not found", success: false })
+        }
+        res.status(200).json({message:"user deleted successfully",success : true })
+
+
+    } catch (error) {
+        res.status(500).json({message:"Something went wrong (Internal server Error)" , success : false , error})
+    }
+}
 module.exports = {
     signup,
     login,
     logout,
     getUsers,
     addUser,
-    editUser
+    editUser,
+    deleteUser
 }
